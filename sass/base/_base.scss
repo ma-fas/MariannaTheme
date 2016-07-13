@@ -1,0 +1,30 @@
+html {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+body {
+	font-family: 'ralewayregular';
+	overflow-x: hidden;
+	width: 100%;
+	padding: 25px;
+	line-height: 1.5;
+	color: $txt_color;
+}
+
+.container {
+	width: 100%;
+	@include margin(0);
+	max-width: 1200px;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.arrow {
+	transition: all 0.5s;
+	&:hover {
+		transform: scale(2.5);
+	}
+}

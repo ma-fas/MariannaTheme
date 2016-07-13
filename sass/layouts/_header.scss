@@ -1,0 +1,44 @@
+header {
+	position: relative;
+	background: url("../img/jumbo.png") no-repeat center center/cover;
+	color: $bg_color;
+	padding: 15% 0 0 0;
+	min-height: 650px;
+}
+
+.title-main {
+	font-family: 'dancing_script_otregular';
+	line-height: 1.2;
+	@include font-size(30px);
+	span {
+		display: block;
+		&:last-child {
+			@include font-size(23px);
+		}
+	}
+}
+
+.title-sub {
+	font-family: 'playfair_displayregular';
+	@include font-size(48px);
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 82px;
+		height: 3px;
+		left: calc(50% - 41px);
+		bottom: -10px;
+		background: $bg_color;
+	}
+}
+
+.title-blurb {
+	@include padding(40px);
+	span {
+		display: block;
+		line-height: 25px;
+	}
+}
+

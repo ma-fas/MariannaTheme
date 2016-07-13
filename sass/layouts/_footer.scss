@@ -1,0 +1,10 @@
+footer {
+	.arrow {
+		color: $txt_color;
+		@include margin(15px);
+	}
+
+	.copy {
+		margin-top: 20px;
+	}
+}

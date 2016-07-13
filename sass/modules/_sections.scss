@@ -1,0 +1,261 @@
+section {
+	@include padding(50px);
+
+	.text-center p {
+		padding: 0 20px;
+		max-width: 900px;
+		@include margin(0);
+	}
+}
+
+
+/* work */
+
+.work-wrap:before,
+.work-wrap:after {
+	content: " ";
+	display: table;
+}
+.work-wrap:after {
+	clear: both;
+}
+
+figure {
+	position: relative;
+	margin: 10px 0;
+	cursor: pointer;
+	display: inline-block;
+	width: 100%;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		opacity: 0;
+		transition: all 1s ease-in-out;
+	}
+
+	&:hover {
+		&:before {
+			opacity: 0.7;
+		}
+		.caption-head:before {
+			left: -20px;
+			top: -20px;
+		}
+		.caption-head:after {
+			right: -20px;
+			top: -20px;
+		}
+		.caption-blurb:before {
+			left: -20px;
+			bottom: -20px;
+		}
+		.caption-blurb:after {
+			right: -20px;
+			bottom: -20px;
+		}
+	}
+	img {
+		width: 100%;
+		display: block;
+	}
+	figcaption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-width: 200px;
+		transform: translate(-50%, -50%);
+		color: $bg_color;
+		line-height: 2;
+		transition: all 1s ease-in-out;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 80%;
+			height: 2px;
+			top: calc(50% + 2px);
+			transform: translate(-50%, -50%);
+			background-color: $bg_color;
+		}
+		.caption-head {
+			position: relative;
+			font-family: 'playfair_displayregular';
+			text-transform: uppercase;
+			@include font-size(22px);
+			&:before {
+				content: '';
+				position: absolute;
+				border-top: 2px solid $bg_color;
+				border-left: 2px solid $bg_color;
+				height: 20px;
+				width: 20px;
+				left: 0;
+				top: 0;
+				transition: all 1s ease-in-out;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				border-top: 2px solid $bg_color;
+				border-right: 2px solid $bg_color;
+				height: 20px;
+				width: 20px;
+				right: 0;
+				top: 0;
+				transition: all 1s ease-in-out;
+			}
+		}
+		.caption-blurb {
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				border-bottom: 2px solid $bg_color;
+				border-left: 2px solid $bg_color;
+				height: 20px;
+				width: 20px;
+				left: 0;
+				bottom: 0;
+				transition: all 1s ease-in-out;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				border-bottom: 2px solid $bg_color;
+				border-right: 2px solid $bg_color;
+				height: 20px;
+				width: 20px;
+				right: 0;
+				bottom: 0;
+				transition: all 1s ease-in-out;
+			}
+		}
+	}
+}
+
+#testimonials {
+	padding: 5px 0;
+}
+
+/* video*/
+
+.video {
+	height: 500px;
+	background: url('../img/bg_video.png') no-repeat;
+	background-size: cover;
+	position: relative;
+	.button-play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 50px;
+		width: 80px;
+		border-style: none;
+		background: none;
+		cursor: pointer;
+		.corner {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+		}
+		.tl {
+			top: 0;
+			left: 0;
+			border-top: 1px solid #000000;
+			border-left: 1px solid #000000;
+		}
+		.tr {
+			top: 0;
+			right: 0;
+			border-top: 1px solid #000000;
+			border-right: 1px solid #000000;
+		}
+		.bl {
+			bottom: 0;
+			left: 0;
+			border-bottom: 1px solid #000000;
+			border-left: 1px solid #000000;
+		}
+		.br {
+			bottom: 0;
+			right: 0;
+			border-bottom: 1px solid #000000;
+			border-right: 1px solid #000000;
+		}
+		.line {
+			height: 1px;
+			width: 20px;
+			background-color: #000000;
+			display: block;
+			position: absolute;
+		}
+		.top {
+			transform: rotate(35deg);
+			top: 41%;
+			left: 37%;
+		}
+		.bottom {
+			transform: rotate(-35deg);
+			margin-top: 10px;
+			top: 43%;
+			left: 37%;
+		}
+	}
+}
+
+/* Social */
+
+.social-wrap {
+	@extend .text-center;
+	@include padding(30px);
+	li {
+		display: inline-block;
+		cursor: pointer;
+		border: 4px solid $bg_color;
+		border-radius: 100px;
+		background-color: transparent;
+		height: 60px;
+		width: 60px;
+		box-shadow: 0 0 0 0 $accent;
+		transition: all 0.5s ease-in-out;
+		&:hover {
+			box-shadow: 0 0 0 3px $accent;
+			background-color: $accent;
+			opacity: 0.8;
+			transition: all 0.5s ease-in-out;
+			a {
+				color: $bg_color;
+			}
+		}	
+		a {
+			display: block;
+			@include font-size(20px);
+			line-height: 50px;
+			text-align: center;
+		}
+	}
+}
+
+/*contact */
+
+#contact {
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: url('../img/bg_contact.jpg') no-repeat center center;
+		opacity: 0.1;
+		z-index: -1;
+	}
+}
